@@ -1,0 +1,145 @@
+{
+  "theme": "dark",
+  "archetype": "7_electric_neon",
+  "domain": "Engineering/Tech/AI Product Demo",
+  "mood": "Futuristic, high-precision, cinematic, immersive, Apple/Tesla-like engineering showcase",
+  "brand_colors": {
+    "background_base": "#030A14",
+    "surface_glass": "rgba(10, 20, 37, 0.6)",
+    "surface_solid": "#0A1425",
+    "surface_border": "rgba(0, 240, 255, 0.15)",
+    "primary_accent": "#00F0FF",
+    "primary_accent_glow": "rgba(0, 240, 255, 0.4)",
+    "secondary_accent": "#FFB600",
+    "secondary_accent_glow": "rgba(255, 182, 0, 0.4)",
+    "brand_deep_navy": "#002C4D",
+    "deviation_red": "#FF4747",
+    "deviation_green": "#1EE64E",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#94A3B8",
+    "text_muted": "#475569"
+  },
+  "typography": {
+    "heading_font": "Outfit",
+    "body_font": "Manrope",
+    "mono_font": "JetBrains Mono",
+    "scale": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter font-medium",
+      "h2": "text-3xl sm:text-4xl tracking-tight font-medium",
+      "h3": "text-xl sm:text-2xl font-medium",
+      "h4": "text-lg font-medium",
+      "body": "text-base leading-relaxed",
+      "mono_label": "text-xs uppercase tracking-[0.2em] font-mono text-primary_accent"
+    },
+    "guidelines": [
+      "No generic fonts for headings (Inter, Roboto, Space Grotesk are banned).",
+      "Headings should have tight letter spacing.",
+      "Overlines/Labels must be uppercase, tiny, wide-spaced mono font.",
+      "Never center-align body text; stick to left-alignment for dense engineering data."
+    ]
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous Spacing (Tailwind Scale p-8 to p-32). Cinematic paddings. The bento grid mode B for dashboards, mode A for marketing features.",
+    "bento_grid_marketing": "grid-cols-1 md:grid-cols-8 lg:grid-cols-12 with gap-8 to gap-12. Asymmetrical spans (col-span-8 row-span-2 for hero tiles).",
+    "bento_grid_dashboard": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4 with gap-6. Dense layout for the simulator view.",
+    "section_padding": "py-24 md:py-32",
+    "container_max": "max-w-7xl mx-auto px-6 md:px-12",
+    "mobile_first": "Ensure all 3D interactives and scroll animations degrade gracefully or use swipe-based gestures on mobile.",
+    "border_radius": "rounded-2xl for major cards, rounded-lg for inner elements. Subdued curves to maintain technical edge."
+  },
+  "ui_components": {
+    "cards": {
+      "style": "Glassmorphism: backdrop-blur-xl bg-[#0A1425]/60, border border-white/10.",
+      "hover": "Hover lifts slightly (-translate-y-1) and brightens border to border-[#00F0FF]/50 with a subtle drop-shadow-[0_0_15px_rgba(0,240,255,0.1)]."
+    },
+    "buttons": {
+      "primary": "Solid #00F0FF background, text #030A14 font-semibold, hover:bg-white hover:text-[#030A14] transition-all. Minimalist rectangular with slight rounded corners.",
+      "secondary": "Transparent with 1px border-[#FFB600], text-[#FFB600], hover:bg-[#FFB600]/10.",
+      "simulation_cta": "Large, glowing button. bg-gradient-to-r from-[#002C4D] to-[#0A1425] border border-[#00F0FF] shadow-[0_0_20px_rgba(0,240,255,0.3)]."
+    },
+    "navigation": {
+      "header": "Sticky with crystal glass (backdrop-blur-2xl bg-[#030A14]/70 border-b border-white/10). Hidden on scroll down, revealed on scroll up."
+    },
+    "dashboard_elements": {
+      "panels": "Dark #002C4D background or deeply tinted gray-blue. Use 1px #00F0FF borders for active metrics.",
+      "data_viz": "Use Recharts or visx for heatmaps and standard plots, but custom glowing SVGs/Canvas for the turbine telemetry."
+    }
+  },
+  "motion_and_interactions": {
+    "scroll_storytelling": "MUST USE Framer Motion useScroll hook or CSS view-timeline. Tie text reveals, 3D rotations, and opacity to scroll progress (clamp between 0 and 1).",
+    "parallax": "Heavy use of parallax for background grids vs foreground text.",
+    "micro_interactions": "Glowing nodes on hover. Lines tracing svg paths (tracing beam effect) around architecture diagrams.",
+    "loading_state": "Monospace retro-terminal counting up or an ASCII turbine spinning.",
+    "3d_elements": "React Three Fiber (R3F) + Drei. Use <Environment preset='night'> and floating animations. Custom glowing materials for the turbine blade."
+  },
+  "icons": "lucide-react",
+  "media_urls": [
+    {
+      "url": "https://images.unsplash.com/photo-1662570069076-c9b5a5820f1d?crop=entropy&cs=srgb&fm=jpg",
+      "category": "hero_background_or_blade_texture",
+      "description": "Close up of a wind turbine blade, great for texturing or backdrop."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1771873679931-992e80181419?crop=entropy&cs=srgb&fm=jpg",
+      "category": "tech_grid_background",
+      "description": "Abstract grid pattern with glowing accents. Perfect for section backgrounds behind the dashboard."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1739387896856-3ba1de53e360?crop=entropy&cs=srgb&fm=jpg",
+      "category": "sensor_macro",
+      "description": "Close up of shiny metal object representing the ESP32 / load cells."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1643590161306-65599acaaea0?crop=entropy&cs=srgb&fm=jpg",
+      "category": "industrial_engine",
+      "description": "Close up view of a jet engine, conveys precision engineering and balancing."
+    }
+  ],
+  "sections_and_content": [
+    {
+      "name": "Hero Section",
+      "content": "Tagline: 'PRECISION BALANCE MADE SIMPLE' and 'AI-Powered Wind Turbine Blade Balancing'. CTA: 'Explore How It Works'.",
+      "visuals": "Animated 3D rotating wind turbine blade (R3F) with a dynamic CG point highlight (glowing neon orange/gold). Deep navy background with cyan rim lighting."
+    },
+    {
+      "name": "Interactive How It Works (Scroll Story)",
+      "content": "Steps: Measure -> Acquire -> Process -> Analyze -> Report.",
+      "visuals": "Scroll-linked animation. As user scrolls, view zooms through 1. Blade on 3 load cells (5cm, 22.5cm, 40cm), 2. ESP32 board lighting up, 3. Wireless waves to Raspberry Pi, 4. AI Dashboard appearing, 5. Counterweight suggestion showing. Use framer-motion scroll interpolation."
+    },
+    {
+      "name": "3D Interactive Visualization",
+      "content": "Legend: Red = High Deviation, Green = Low Deviation.",
+      "visuals": "Interactive 3D blade. User can drag to rotate/zoom. Heatmap texture on the blade that shifts from Red (incorrect CG) to Green (corrected CG)."
+    },
+    {
+      "name": "System Architecture Diagram",
+      "content": "Data flow: Load Cells -> ESP32 -> Raspberry Pi -> Dashboard -> Report",
+      "visuals": "Animated tracing beam (Aceternity style) connecting glowing nodes. Use neon cyan lines on dark background."
+    },
+    {
+      "name": "Features & Benefits Grid",
+      "content": "Features: High Precision, AI Powered, 3D Visualization, Portable, PDF Report, Tare & Calibration. Benefits: Reduces CG Imbalance, Lower Structural Stress.",
+      "visuals": "Asymmetrical Bento Grid (Mode A). Use glassmorphic cards with subtle cyan hover glows. Incorporate macro sensor images."
+    },
+    {
+      "name": "Final CTA / Simulator Launch",
+      "content": "'Experience Precision Balancing' -> 'Launch Simulation'.",
+      "visuals": "Full screen cinematic dark section with central glowing CTA button that links to a dedicated /simulator route."
+    },
+    {
+      "name": "Simulator Route (Dedicated Page)",
+      "content": "Live Simulation Tool: Move CG manually, add virtual imbalance weight.",
+      "visuals": "Dense Control Room Grid (Mode B). Real-time charts, 3D viewer panel, numeric readouts with JetBrains Mono, sliders for weight input."
+    }
+  ],
+  "instructions_to_main_agent": [
+    "Strictly adhere to the dark theme #030A14 background with #00F0FF (cyan) and #FFB600 (gold) glowing accents.",
+    "Use framer-motion heavily for scroll-based storytelling (useScroll hook mapping scroll progress to opacity, scale, and y-transform).",
+    "Implement the hero wind turbine and interactive visualization using @react-three/fiber and @react-three/drei.",
+    "Do NOT use 'Inter', 'Roboto', or 'Space Grotesk' fonts. Use 'Outfit' for headings, 'Manrope' for body, and 'JetBrains Mono' for data.",
+    "Build a separate fullscreen route for the Live Simulation Tool, adopting a dense, dashboard 'Control Room' bento grid.",
+    "Ensure all marketing sections use generous padding (py-24 or py-32) and optical alignment. The brand must feel like an Apple or SpaceX engineering page.",
+    "Include 'data-testid' on all interactive elements.",
+    "Apply 'glassmorphism' correctly (backdrop-blur-xl with a 1px solid, semi-transparent border, NOT just a muddy transparent background)."
+  ]
+}
