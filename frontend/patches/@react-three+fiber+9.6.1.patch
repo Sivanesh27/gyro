@@ -1,0 +1,66 @@
+diff --git a/node_modules/@react-three/fiber/dist/events-583399dd.cjs.prod.js b/node_modules/@react-three/fiber/dist/events-583399dd.cjs.prod.js
+index f3834fa..3aa0264 100644
+--- a/node_modules/@react-three/fiber/dist/events-583399dd.cjs.prod.js
++++ b/node_modules/@react-three/fiber/dist/events-583399dd.cjs.prod.js
+@@ -351,7 +351,7 @@ function diffProps(instance, newProps) {
+   // Sort through props
+   for (const prop in newProps) {
+     // Skip reserved keys
+-    if (RESERVED_PROPS.includes(prop)) continue;
++    if (RESERVED_PROPS.includes(prop) || (prop.charCodeAt(0)===120 && prop.charCodeAt(1)===45) || prop.startsWith("data-")) continue;
+     // Skip if props match
+     if (is.equ(newProps[prop], instance.props[prop])) continue;
+ 
+@@ -403,7 +403,7 @@ function applyProps(object, props) {
+     let value = props[prop];
+ 
+     // Don't mutate reserved keys
+-    if (RESERVED_PROPS.includes(prop)) continue;
++    if (RESERVED_PROPS.includes(prop) || (prop.charCodeAt(0)===120 && prop.charCodeAt(1)===45) || prop.startsWith("data-")) continue;
+ 
+     // Deal with pointer events, including removing them if undefined
+     if (instance && EVENT_REGEX.test(prop)) {
+diff --git a/node_modules/@react-three/fiber/dist/events-b389eeca.esm.js b/node_modules/@react-three/fiber/dist/events-b389eeca.esm.js
+index 76f308c..8a1cb50 100644
+--- a/node_modules/@react-three/fiber/dist/events-b389eeca.esm.js
++++ b/node_modules/@react-three/fiber/dist/events-b389eeca.esm.js
+@@ -326,7 +326,7 @@ function diffProps(instance, newProps) {
+   // Sort through props
+   for (const prop in newProps) {
+     // Skip reserved keys
+-    if (RESERVED_PROPS.includes(prop)) continue;
++    if (RESERVED_PROPS.includes(prop) || (prop.charCodeAt(0)===120 && prop.charCodeAt(1)===45) || prop.startsWith("data-")) continue;
+     // Skip if props match
+     if (is.equ(newProps[prop], instance.props[prop])) continue;
+ 
+@@ -378,7 +378,7 @@ function applyProps(object, props) {
+     let value = props[prop];
+ 
+     // Don't mutate reserved keys
+-    if (RESERVED_PROPS.includes(prop)) continue;
++    if (RESERVED_PROPS.includes(prop) || (prop.charCodeAt(0)===120 && prop.charCodeAt(1)===45) || prop.startsWith("data-")) continue;
+ 
+     // Deal with pointer events, including removing them if undefined
+     if (instance && EVENT_REGEX.test(prop)) {
+diff --git a/node_modules/@react-three/fiber/dist/events-f19bcc32.cjs.dev.js b/node_modules/@react-three/fiber/dist/events-f19bcc32.cjs.dev.js
+index 07d45d4..b97d4af 100644
+--- a/node_modules/@react-three/fiber/dist/events-f19bcc32.cjs.dev.js
++++ b/node_modules/@react-three/fiber/dist/events-f19bcc32.cjs.dev.js
+@@ -351,7 +351,7 @@ function diffProps(instance, newProps) {
+   // Sort through props
+   for (const prop in newProps) {
+     // Skip reserved keys
+-    if (RESERVED_PROPS.includes(prop)) continue;
++    if (RESERVED_PROPS.includes(prop) || (prop.charCodeAt(0)===120 && prop.charCodeAt(1)===45) || prop.startsWith("data-")) continue;
+     // Skip if props match
+     if (is.equ(newProps[prop], instance.props[prop])) continue;
+ 
+@@ -403,7 +403,7 @@ function applyProps(object, props) {
+     let value = props[prop];
+ 
+     // Don't mutate reserved keys
+-    if (RESERVED_PROPS.includes(prop)) continue;
++    if (RESERVED_PROPS.includes(prop) || (prop.charCodeAt(0)===120 && prop.charCodeAt(1)===45) || prop.startsWith("data-")) continue;
+ 
+     // Deal with pointer events, including removing them if undefined
+     if (instance && EVENT_REGEX.test(prop)) {
